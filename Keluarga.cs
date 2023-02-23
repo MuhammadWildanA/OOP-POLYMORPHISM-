@@ -1,137 +1,83 @@
-class Keluarga
+using System;
+
+public class HelloWorld
 {
-    public virtual void nama()
+    static public void Main()
     {
-        Console.WriteLine("nama");
+        familyhobi ak = new familyhobi();
+        familyhobi ayah = new Ayah();
+        familyhobi ibu = new Ibu();
+        familyhobi anak = new Anak();
+        familyhobi adik = new Adik();
+
+        familydata ayahku = new familydata("Abdur Rosyid", 43, 0895614756845);
+        familydata ibuku = new familydata("Asmaul Hasina", 41, 0895632344188);
+        familydata aku = new familydata("Muhammad Wildan A", 16, +6283347678998);
+        familydata adikku = new familydata("Ayana shaa", 3, 0);
+
+        Console.WriteLine("data ayah:\n" + ayahku.nama + "\n" + ayahku.umur + "\n" + ayahku.nohp);
+        ayah.Hobi();
+        Console.WriteLine("data ibu:\n" + ibuku.nama + "\n" + ibuku.umur + "\n" + ibuku.nohp);
+        ibu.Hobi();
+        Console.WriteLine("data anak:\n" + aku.nama + "\n" + aku.umur + "\n" + aku.nohp);
+        anak.Hobi();
+        Console.WriteLine("data anak:\n" + adikku.nama + "\n" + adikku.umur + "\n" + adikku.nohp);
+        adik.Hobi();
+
+
+
     }
-    public virtual void umur()
+    class familydata
     {
-        Console.WriteLine("umur");
+        public string nama;
+        public int umur;
+        public long nohp;
+
+        public familydata(string Nama, int Umur, long Nohp)
+        {
+            nama = Nama;
+            umur = Umur;
+            nohp = Nohp;
+        }
+
+
+
+    }
+    class familyhobi
+    {
+        public virtual void Hobi()
+        {
+            Console.WriteLine("Hobi");
+        }
+    }
+    class Ayah : familyhobi
+    {
+        public override void Hobi()
+        {
+            Console.WriteLine("Menonton TV");
+        }
+    }
+    class Ibu : familyhobi
+    {
+        public override void Hobi()
+        {
+            Console.WriteLine("Mengaji");
+        }
+    }
+    class Anak : familyhobi
+    {
+        public override void Hobi()
+        {
+            Console.WriteLine("Menonton film");
+        }
+    }
+    class Adik : familyhobi
+    {
+        public override void Hobi()
+        {
+            Console.WriteLine("Menonton Anime");
+        }
     }
 
-    public virtual void noHP()
-    {
-        Console.WriteLine("no HP");
-    }
 
-    public virtual void hobi()
-    {
-        Console.WriteLine("hobi");
-    }
-
-    public void enter()
-    {
-        Console.WriteLine("");
-    }
-
-}
-class Ayah : Keluarga
-{
-    public override void nama()
-    {
-        Console.WriteLine("Nama Ayah : mujib");
-    }
-    public override void umur()
-    {
-        Console.WriteLine("Umur : 42");
-    }
-    public override void noHP()
-    {
-        Console.WriteLine("No HP : 083599726401");
-    }
-    public override void hobi()
-    {
-        Console.WriteLine("hobi : menjahit");
-    }
-}
-class Ibu : Keluarga
-{
-    public override void nama()
-    {
-        Console.WriteLine("Nama Ibu : susi");
-    }
-    public override void umur()
-    {
-        Console.WriteLine("Umur : 40");
-    }
-    public override void noHP()
-    {
-        Console.WriteLine("No HP : 086453821987");
-    }
-    public override void hobi()
-    {
-        Console.WriteLine("Hobi : ngaji");
-    }
-}
-class Aku : Keluarga
-{
-    public override void nama()
-    {
-        Console.WriteLine("Namaku : Muhammad Wildan A");
-    }
-    public override void umur()
-    {
-        Console.WriteLine("Umur : 16");
-    }
-    public override void noHP()
-    {
-        Console.WriteLine("No HP : 0895811273050");
-    }
-    public override void hobi()
-    {
-        Console.WriteLine("Hobi :  Mendengarkan Musik");
-    }
-} 
-
-class Adik : Keluarga
-{
-    public override void nama()
-    {
-        Console.WriteLine("Nama Adik : Rosa");
-    }
-    public override void umur()
-    {
-        Console.WriteLine("Umur : 14");
-    }
-    public override void noHP()
-    {
-        Console.WriteLine("No HP : 082377668493");
-    }
-    public override void hobi()
-    {
-        Console.WriteLine("Hobi :  turu");
-    }
-}
-class Program
-{
-    static void Main(string[] args)
-    {
-        Keluarga myKeluarga = new Keluarga();
-        Keluarga myAyah = new Ayah();
-        Keluarga myIbu = new Ibu();
-        Keluarga myAku = new Aku();
-        Keluarga myAdik = new Adik();
-
-        
-        myAyah.nama();
-        myAyah.umur();
-        myAyah.noHP();
-        myAyah.hobi();
-        myKeluarga.enter();
-        myIbu.nama();
-        myIbu.noHP();
-        myIbu.umur();
-        myIbu.hobi();
-        myKeluarga.enter();
-        myAku.nama();
-        myAku.noHP();
-        myAku.umur();
-        myAku.hobi();
-        myKeluarga.enter();
-        myAdik.nama();
-        myAdik.noHP();
-        myAdik.umur();
-        myAdik.hobi();
-        myKeluarga.enter();
-    }
 }
